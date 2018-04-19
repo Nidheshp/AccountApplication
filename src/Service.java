@@ -32,4 +32,8 @@ public class Service {
 		}
 		return count;
 	}
+
+	public int getCountofAccountWithFirstName8(String firstName) {
+		return (int) accounts.values().stream().filter(account -> account.getFirstName().equals(firstName)).count();
+	}
 }

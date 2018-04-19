@@ -49,4 +49,18 @@ public class AccountTest {
 		Assert.assertEquals(service.getCountofAccountWithFirstName("Jason"), 1);
 		Assert.assertEquals(service.getCountofAccountWithFirstName("Nidhesh"), 2);
 	}
+
+	@Test
+	public void returnGivenName8() {
+
+		service.addAccount(Account1);
+		service.addAccount(Account2);
+		service.addAccount(Account3);
+		service.addAccount(Account4);
+		Assert.assertEquals(service.getCountofAccountWithFirstName8("Jason"), 1);
+		Assert.assertEquals(service.getCountofAccountWithFirstName8("Calum"), 0);
+		Assert.assertEquals(service.getCountofAccountWithFirstName8("Jason"), 1);
+		Assert.assertEquals(service.getCountofAccountWithFirstName8("Nidhesh"), 2);
+	}
+
 }
