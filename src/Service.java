@@ -2,27 +2,25 @@ import java.util.HashMap;
 
 public class Service {
 
-	static HashMap<Integer, Account> accounts = new HashMap<Integer, Account>();
+	HashMap<Integer, Account> accounts = new HashMap<Integer, Account>();
 
-	public static void addAccount(int star, Account Account) {
+	private int id = 1;
 
-		accounts.put(star, Account);
+	public void addAccount(Account Account) {
 
+		accounts.put(id, Account);
+		id++;
 	}
 
-	public static HashMap<Integer, Account> getList() {
+	public HashMap<Integer, Account> getAccountMap() {
 
 		return accounts;
 	}
 
-	public static String RetrieveFromMap(int star) {
+	public String RetrieveFromMap(int star) {
 
 		return "Account: " + "FirstName " + accounts.get(star).getFirstName() + " LastName "
 				+ accounts.get(star).getLastName() + " AccNo " + accounts.get(star).getAccountNumber();
-	}
-
-	public static void setaccounts(HashMap<Integer, Account> accounts) {
-		Service.accounts = accounts;
 	}
 
 }
