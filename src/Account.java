@@ -1,18 +1,10 @@
-
 public class Account {
 
 	private String firstName;
 	private String lastName;
-	private int accountNumber;
+	private String accountNumber;
 
-	public static void main(String[] args) {
-
-		System.out.println(Service.RetrieveFromMap(1));
-		System.out.println(Service.RetrieveFromMap(2));
-		System.out.println(Service.RetrieveFromMap(3));
-	}
-
-	public Account(String firstName, String lastName, int accountNumber) {
+	public Account(String firstName, String lastName, String accountNumber) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -35,11 +27,11 @@ public class Account {
 		this.lastName = lastName;
 	}
 
-	public int getAccountNumber() {
+	public String getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(int accountNumber) {
+	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 }
