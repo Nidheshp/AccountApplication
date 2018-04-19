@@ -46,7 +46,7 @@ public class AccountTest {
 		service.addAccount(Account4);
 		Assert.assertEquals(service.getCountofAccountWithFirstName("Jason"), 1);
 		Assert.assertEquals(service.getCountofAccountWithFirstName("Calum"), 0);
-		Assert.assertEquals(service.getCountofAccountWithFirstName("Jason"), 1);
+		Assert.assertEquals(service.getCountofAccountWithFirstName("Jay"), 0);
 		Assert.assertEquals(service.getCountofAccountWithFirstName("Nidhesh"), 2);
 	}
 
@@ -59,7 +59,7 @@ public class AccountTest {
 		service.addAccount(Account4);
 		Assert.assertEquals(service.getCountofAccountWithFirstName8("Jason"), 1);
 		Assert.assertEquals(service.getCountofAccountWithFirstName8("Calum"), 0);
-		Assert.assertEquals(service.getCountofAccountWithFirstName8("Jason"), 1);
+		Assert.assertEquals(service.getCountofAccountWithFirstName8("Jay"), 0);
 		Assert.assertEquals(service.getCountofAccountWithFirstName8("Nidhesh"), 2);
 	}
 
