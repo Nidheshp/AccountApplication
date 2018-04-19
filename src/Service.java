@@ -23,4 +23,13 @@ public class Service {
 				+ accounts.get(star).getLastName() + " AccNo " + accounts.get(star).getAccountNumber();
 	}
 
+	public int getCountofAccountWithFirstName(String firstName) {
+		int count = 0;
+		for (Account a : accounts.values()) {
+			if (a.getFirstName().equals(firstName)) {
+				count++;
+			}
+		}
+		return count;
+	}
 }
