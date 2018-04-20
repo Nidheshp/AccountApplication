@@ -13,6 +13,7 @@ public class AccountTest {
 	Account Account1 = new Account("Nidhesh", "Pillai", "1001");
 	Account Account2 = new Account("Jason", "Hart", "1002");
 	Account Account3 = new Account("Callum", "McGregor", "1003");
+	Account Account4 = new Account("Nidhesh", "Pillai", "1004");
 
 	@Test
 	public void addAccountTest() {
@@ -27,7 +28,7 @@ public class AccountTest {
 
 	@Test
 	public void jSonTest() {
-		
+
 		Account test1 = new Account("Nidhesh", "Pillai", "1001");
 		service.addAccount(test1);
 		String output = "{\"1\":{\"firstName\":\"Nidhesh\",\"lastName\":\"Pillai\",\"accountNumber\":\"1001\"}}";
@@ -35,4 +36,31 @@ public class AccountTest {
 		String jsonTest = gson.getJSon(service.getAccountMap());
 		assertEquals(jsonTest, output);
 	}
+
+	@Test
+	public void returnGivenName() {
+
+		service.addAccount(Account1);
+		service.addAccount(Account2);
+		service.addAccount(Account3);
+		service.addAccount(Account4);
+		Assert.assertEquals(service.getCountofAccountWithFirstName("Jason"), 1);
+		Assert.assertEquals(service.getCountofAccountWithFirstName("Calum"), 0);
+		Assert.assertEquals(service.getCountofAccountWithFirstName("Jay"), 0);
+		Assert.assertEquals(service.getCountofAccountWithFirstName("Nidhesh"), 2);
+	}
+
+	@Test
+	public void returnGivenName8() {
+
+		service.addAccount(Account1);
+		service.addAccount(Account2);
+		service.addAccount(Account3);
+		service.addAccount(Account4);
+		Assert.assertEquals(service.getCountofAccountWithFirstName8("Jason"), 1);
+		Assert.assertEquals(service.getCountofAccountWithFirstName8("Calum"), 0);
+		Assert.assertEquals(service.getCountofAccountWithFirstName8("Jay"), 0);
+		Assert.assertEquals(service.getCountofAccountWithFirstName8("Nidhesh"), 2);
+	}
+
 }
